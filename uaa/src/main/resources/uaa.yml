@@ -472,7 +472,7 @@ login:
       # URL metadata fetch - read timeout
       soTimeout: 10000
 #BEGIN SAML PROVIDERS
-#    providers:
+    providers:
 #      okta-signed-or-encrypted:
 #        idpMetadata: |
 #          <?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.okta.com/k36wkjw6EAEJVZXFFDAU"><md:IDPSSODescriptor WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIICmTCCAgKgAwIBAgIGAUPATqmEMA0GCSqGSIb3DQEBBQUAMIGPMQswCQYDVQQGEwJVUzETMBEG
@@ -548,6 +548,16 @@ login:
 #        linkText: 'Log in with OpenAM'
 #        addShadowUserOnLogin: true
 #        groupMappingMode: AS_SCOPES
+      simplesamlphp-local:
+        idpMetadata: https://sample-sp.local.e-ucm.es:8443/simplesaml/saml2/idp/metadata.php
+        nameID: urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+        assertionConsumerIndex: 0
+        signMetaData: false
+        signRequest: false
+        showSamlLoginLink: true
+        linkText: 'Log in with SimpleSamlPHP'
+        addShadowUserOnLogin: true
+        groupMappingMode: AS_SCOPES
 #END SAML PROVIDERS
 
   authorize:
